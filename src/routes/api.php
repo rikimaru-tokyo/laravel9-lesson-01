@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers;
+use App\Http\Controllers\JunkAPI;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/h', function () {
     return  response()->json('{"health":"OK"}', 200);
 });
+
+Route::get('/j',[JunkAPI::class,'index']);
+
+
